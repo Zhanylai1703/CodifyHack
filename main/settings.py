@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'project',
     'rest_framework',
     'drf_yasg',
+    'django_mptt_admin',
+    'mptt',
 ]
 
 MIDDLEWARE = [

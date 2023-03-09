@@ -1,4 +1,5 @@
 from django.db import models
+
 from mptt.models import MPTTModel, TreeForeignKey
 
 # Create your models here.
@@ -47,7 +48,7 @@ class Category(MPTTModel):
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
 
-
+    
 
 class QA(models.Model):
     question = models.TextField(
@@ -61,6 +62,13 @@ class QA(models.Model):
         on_delete=models.CASCADE, 
         null=True, blank=True, 
         related_name='categories')
+    
+    Establishments = models.ForeignKey(
+        'Establishments', 
+        on_delete=models.CASCADE, 
+        null=True, blank=True, 
+        related_name='establishmentss')
+    
     
 
     def str(self):
