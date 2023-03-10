@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.response import Response
 from .models import Establishments, Category, QA
+
 from .serializers import EstablishmentsSerializer, CategorySerializer, QASerializer
 
 # Create your views here.
@@ -18,3 +19,4 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class QAViewSet(viewsets.ModelViewSet):
     queryset = QA.objects.all()
     serializer_class = QASerializer
+    
