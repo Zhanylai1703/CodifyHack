@@ -11,7 +11,12 @@ class Establishments(models.Model):
     subtitle = models.CharField(
         max_length=50, 
         verbose_name='короткое название')
+    description = models.TextField(
+        null=True, verbose_name='инфо')
     photo = models.ImageField(
+        upload_to='profile_images', 
+        blank=True, null=True)
+    sub_photo = models.ImageField(
         upload_to='profile_images', 
         blank=True, null=True)
     location = models.CharField(
