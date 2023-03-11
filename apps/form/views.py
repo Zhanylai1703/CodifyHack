@@ -2,7 +2,7 @@ from django.core.mail import send_mail
 from rest_framework import generics
 from rest_framework.response import Response
 from .models import Form, FormHistory
-from .serializers import FormSerializer
+from .serializers import FormSerializer, FormHistorySerializer
 
 
 class FormCreateView(generics.CreateAPIView):
@@ -25,3 +25,6 @@ class FormCreateView(generics.CreateAPIView):
         return Response(serializer.data, status=201, headers=headers)
 
 
+class FormHistoryListAPIView(generics.ListAPIView):
+    queryset = FormHistory.objects.all()
+    serializer_class = FormHistorySerializer
