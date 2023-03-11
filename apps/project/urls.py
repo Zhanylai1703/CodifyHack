@@ -12,5 +12,4 @@ router.register(r'categories', CategoryViewSet, basename='categories')
 router.register(r'qa', QAViewSet, basename='qa')
 
 
-
 urlpatterns = router.urls

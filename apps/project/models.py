@@ -80,5 +80,6 @@ class QA(models.Model):
         verbose_name_plural = 'Вопросы и ответы'
     
     
+    
 
 
