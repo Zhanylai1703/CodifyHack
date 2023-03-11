@@ -25,4 +25,18 @@ class Form(models.Model):
         verbose_name_plural = 'Формы'
 
 
+class FormHistory(models.Model):
+    form = models.ForeignKey(
+        'Form', on_delete=models.CASCADE, 
+        related_name='form_history', 
+        verbose_name='Мои запросы')
+    sent_time = models.DateTimeField(auto_now_add=True)
+
+
+    
+    class Meta:
+        verbose_name = 'Мой запрос'
+        verbose_name_plural = 'Мои запросы'
+
+
 
