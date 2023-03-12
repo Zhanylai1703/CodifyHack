@@ -18,7 +18,7 @@ class Form(models.Model):
     data_time = models.DateTimeField()
 
     def __str__(self):
-        return self.name
+        return self.establishments
     
     class Meta:
         verbose_name = 'Форма'
@@ -31,6 +31,12 @@ class FormHistory(models.Model):
         related_name='form_history', 
         verbose_name='Мои запросы')
     sent_time = models.DateTimeField(auto_now_add=True)
+    establishments = models.ForeignKey(
+        'project.Establishments', 
+        on_delete=models.CASCADE, 
+        null=True, blank=True, 
+        related_name='form_history_establishmentss', 
+        verbose_name='Здания')
 
 
     

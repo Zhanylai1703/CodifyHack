@@ -20,6 +20,9 @@ class FormHistorySerializer(serializers.ModelSerializer):
             'id',
             'form',
             'sent_time',
+            'establishments',
+            
+
 
         )
 
